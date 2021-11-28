@@ -1,13 +1,113 @@
+html {
+  min-height: 100%;
+}
 body {
+  background-color: #ff9451;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23FF9451' cx='50' cy='0' r='50'/%3E%3Cg fill='%23ff9753' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ff9a54' cx='50' cy='100' r='50'/%3E%3Cg fill='%23ff9d56' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffa158' cx='50' cy='200' r='50'/%3E%3Cg fill='%23ffa45a' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffa75b' cx='50' cy='300' r='50'/%3E%3Cg fill='%23ffaa5d' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffad5f' cx='50' cy='400' r='50'/%3E%3Cg fill='%23ffb060' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffb462' cx='50' cy='500' r='50'/%3E%3Cg fill='%23ffb764' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffba65' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ffbd67' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffc069' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ffc36b' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffc66c' cx='50' cy='800' r='50'/%3E%3Cg fill='%23ffca6e' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffcd70' cx='50' cy='900' r='50'/%3E%3Cg fill='%23ffd071' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23FFD373' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: contain;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: sans-serif;
+  min-height: 100%;
+  padding-bottom: 5rem;
+}
+h1,
+h2 {
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 4rem;
+}
+.lista-pedido .media {
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 3rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.lista-pedido .media:last-of-type {
+  border-bottom: 0;
+}
+.lista-pedido .media-body p {
+  margin: 0;
+}
+.lista-pedido .media-body button {
+  margin-top: 1rem !important;
+}
+.lista-pedido .media-body span {
+  font-weight: bold;
+}
+
+label {
+  color: white;
+}
+
+label span {
+  color: red;
+}
+
+input[type="date"],
+input[type="time"] {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.pedido {
+  padding: 2rem;
+  background: white;
+  border-bottom: 1px solid #e1e1e1;
+  color: black;
+}
+
+.pedido p {
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+.pedido p span {
+  font-weight: normal;
+}
+.pedido:first-of-type {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.pedido:last-of-type {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.button.eliminar,
+.button.eliminar:hover {
+  background-color: #f30909;
+  color: white;
+  margin-top: 2rem;
+}
+
+.alerta-error {
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+}
+
+button.button-primary {
+  background-color: rgb(255 151 83);
+  border: 1px solid white;
+}
+
+button.button-primary:hover {
+  background-color: white;
+  color: rgb(255 151 83);
+  border: 1px solid rgb(255 151 83);
+}
+
+.title{
+    border-bottom: 1px solid white;
 }
