@@ -87,7 +87,7 @@ const Formulario = ({ crearPedido }) => {
           type="text"
           name="celular"
           className="u-full-width"
-          placeholder="Numero de celular"
+          placeholder="Celular del cliente"
           onChange={actualizarState}
           value={celular}
         />

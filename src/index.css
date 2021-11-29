@@ -21,6 +21,12 @@ h2 {
   font-family: "Noto Sans", sans-serif;
   font-size: 4rem;
 }
+
+p a, p a:hover{
+    color: #25D366;
+    margin-left: 10px;
+}
+
 .lista-pedido .media {
   border-bottom: 1px solid #e1e1e1;
   padding-bottom: 3rem;

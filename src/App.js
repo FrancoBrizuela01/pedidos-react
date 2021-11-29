@@ -34,10 +34,10 @@ function App() {
 
   return (
     <>
-        <div className="container title">
-            <h1>Administración de Pedidos</h1>
-        </div>
-      
+      <div className="container title">
+        <h1>Administración de Pedidos</h1>
+      </div>
+
       <div className="container">
         <div className="row">
           <div className="one-half column">
