@@ -8,8 +8,10 @@ const Formulario = ({ crearPedido }) => {
     celular: "",
     articulo: "",
     talle: "",
+    proveedor: "",
     fecha: "",
     hora: "",
+    lugar: "",
     descripcion: "",
   });
 
@@ -22,8 +24,17 @@ const Formulario = ({ crearPedido }) => {
     });
   };
 
-  const { cliente, celular, articulo, talle, fecha, hora, descripcion } =
-    pedido;
+  const {
+    cliente,
+    celular,
+    articulo,
+    talle,
+    proveedor,
+    fecha,
+    hora,
+    lugar,
+    descripcion,
+  } = pedido;
 
   const submitPedido = (e) => {
     e.preventDefault();
@@ -33,8 +44,10 @@ const Formulario = ({ crearPedido }) => {
       celular.trim() === "" ||
       articulo.trim() === "" ||
       talle.trim() === "" ||
+      proveedor.trim() === "" ||
       fecha.trim() === "" ||
-      hora.trim() === ""
+      hora.trim() === "" ||
+      lugar.trim() === ""
     ) {
       actualizarError(true);
       return;
@@ -51,16 +64,16 @@ const Formulario = ({ crearPedido }) => {
       celular: "",
       articulo: "",
       talle: "",
+      proveedor: "",
       fecha: "",
       hora: "",
+      lugar: "",
       descripcion: "",
     });
   };
 
   return (
     <>
-      <h2>Crear pedido</h2>
-
       {error ? (
         <p className="alerta-error">
           Es necesario completar los campos obligatorios (*)
@@ -68,87 +81,141 @@ const Formulario = ({ crearPedido }) => {
       ) : null}
 
       <form onSubmit={submitPedido}>
-        <label>
-          Nombre cliente <span>*</span>
-        </label>
-        <input
-          type="text"
-          name="cliente"
-          className="u-full-width"
-          placeholder="Nombre cliente"
-          onChange={actualizarState}
-          value={cliente}
-        />
+        <h2>Crear pedido</h2>
+        <div class="row">
+          <div class="six columns">
+            <label>
+              Nombre cliente <span>*</span>
+            </label>
+            <input
+              type="text"
+              name="cliente"
+              className="u-full-width"
+              placeholder="Nombre cliente"
+              onChange={actualizarState}
+              value={cliente}
+            />
+          </div>
 
-        <label>
-          Celular del cliente <span>*</span>
-        </label>
-        <input
-          type="text"
-          name="celular"
-          className="u-full-width"
-          placeholder="Celular del cliente"
-          onChange={actualizarState}
-          value={celular}
-        />
+          <div class="six columns">
+            <label>
+              Celular del cliente <span>*</span>
+            </label>
+            <input
+              type="text"
+              name="celular"
+              className="u-full-width"
+              placeholder="Celular del cliente"
+              onChange={actualizarState}
+              value={celular}
+            />
+          </div>
+        </div>
 
-        <label>
-          Artículo <span>*</span>
-        </label>
-        <input
-          type="text"
-          name="articulo"
-          className="u-full-width"
-          placeholder="Artículo"
-          onChange={actualizarState}
-          value={articulo}
-        />
+        <div className="row">
+          <div class="four columns">
+            <label>
+              Artículo <span>*</span>
+            </label>
+            <input
+              type="text"
+              name="articulo"
+              className="u-full-width"
+              placeholder="Artículo"
+              onChange={actualizarState}
+              value={articulo}
+            />
+          </div>
 
-        <label>
-          Talle <span>*</span>
-        </label>
-        <input
-          type="text"
-          name="talle"
-          className="u-full-width"
-          placeholder="Talle"
-          onChange={actualizarState}
-          value={talle}
-        />
+          <div class="four columns">
+            <label>
+              Talle <span>*</span>
+            </label>
+            <input
+              type="text"
+              name="talle"
+              className="u-full-width"
+              placeholder="Talle"
+              onChange={actualizarState}
+              value={talle}
+            />
+          </div>
 
-        <label>
-          Fecha de entrega <span>*</span>
-        </label>
-        <input
-          type="date"
-          name="fecha"
-          className="u-full-width"
-          onChange={actualizarState}
-          value={fecha}
-        />
+          <div class="four columns">
+            <label>
+              Proveedor <span>*</span>
+            </label>
+            <input
+              type="text"
+              name="proveedor"
+              className="u-full-width"
+              placeholder="Talle"
+              onChange={actualizarState}
+              value={proveedor}
+            />
+          </div>
+        </div>
 
-        <label>
-          Hora de entrega <span>*</span>
-        </label>
-        <input
-          type="time"
-          name="hora"
-          className="u-full-width"
-          onChange={actualizarState}
-          value={hora}
-        />
+        <div className="row">
+          <div class="four columns">
+            <label>
+              Fecha de entrega <span>*</span>
+            </label>
+            <input
+              type="date"
+              name="fecha"
+              className="u-full-width"
+              onChange={actualizarState}
+              value={fecha}
+            />
+          </div>
 
-        <label>Descripción</label>
-        <textarea
-          className="u-full-width"
-          name="descripcion"
-          onChange={actualizarState}
-          value={descripcion}
-        ></textarea>
+          <div class="four columns">
+            <label>
+              Hora de entrega <span>*</span>
+            </label>
+            <input
+              type="time"
+              name="hora"
+              className="u-full-width"
+              onChange={actualizarState}
+              value={hora}
+            />
+          </div>
 
-        <button type="submit" className="u-full-width button-primary">
-          Agregar Pedido
-        </button>
+          <div class="four columns">
+            <label>
+              Lugar de entrega <span>*</span>
+            </label>
+            <input
+              type="text"
+              name="lugar"
+              className="u-full-width"
+              onChange={actualizarState}
+              value={lugar}
+            />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="six columns">
+            <label>Descripción</label>
+            <textarea
+              className="u-full-width"
+              name="descripcion"
+              onChange={actualizarState}
+              value={descripcion}
+            ></textarea>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="four columns offset-by-four ">
+            <button type="submit" className="u-full-width button-primary ">
+              Agregar Pedido
+            </button>
+          </div>
+        </div>
       </form>
     </>
   );

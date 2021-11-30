@@ -39,21 +39,21 @@ function App() {
       </div>
 
       <div className="container">
-        <div className="row">
-          <div className="one-half column">
-            <Formulario crearPedido={crearPedido} />
-          </div>
-          <div className="one-half column">
-            <h2>{titulo}</h2>
-            {pedidos.map((pedido) => (
-              <Pedido
-                key={pedido.id}
-                pedido={pedido}
-                eliminarPedido={eliminarPedido}
-              />
-            ))}
-          </div>
-        </div>
+        {/* <div className="row"> */}
+        {/* <div className="one-half column"> */}
+        <Formulario crearPedido={crearPedido} />
+        {/* </div> */}
+        {/* <div className="one-half column"> */}
+        <h2>{titulo}</h2>
+        {pedidos.map((pedido) => (
+          <Pedido
+            key={pedido.id}
+            pedido={pedido}
+            eliminarPedido={eliminarPedido}
+          />
+        ))}
+        {/* </div> */}
+        {/* </div> */}
       </div>
     </>
   );
