@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const Formulario = ({ crearPedido }) => {
+const Formulario = ({ crearPedido, pedidos }) => {
   //state de pedidos
   const [pedido, actualizarPedido] = useState({
     cliente: "",
@@ -55,7 +55,13 @@ const Formulario = ({ crearPedido }) => {
 
     actualizarError(false);
 
-    pedido.id = uuidv4();
+    actualizarPedido({
+      ...pedido,
+      id: uuidv4(),
+      orden: pedidos[pedidos.length - 1].orden + 1,
+    });
+
+    console.log(pedidos[pedidos.length - 1]);
 
     crearPedido(pedido);
 
