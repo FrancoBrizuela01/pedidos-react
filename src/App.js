@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Formulario from "./components/Formulario";
 import Pedido from "./components/Pedido";
 import Buscador from "./components/Buscador";
 import Navbar from "./components/Navbar";
-
+import ImgHome from "./img/img-home.svg";
 
 function App() {
   let pedidosIniciales = JSON.parse(localStorage.getItem("pedidos"));
@@ -39,13 +40,45 @@ function App() {
 
   return (
     <>
-      <Navbar/>
-      <div className="container title">
-        <h1>Administración de Pedidos</h1>
-      </div>
-      <div className="container buscador">
-        <Buscador pedidos={pedidos} setPedidoEncontrado={setPedidoEncontrado} />
-      </div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/formulario"
+            element={<Formulario crearPedido={crearPedido} pedidos={pedidos} />}
+          ></Route>
+
+          <Route
+            path="/pedido"
+            element={
+              <div className="container">
+                <h2>{titulo}</h2>
+                {pedidos.map((pedido) => (
+                  <Pedido
+                    key={pedido.id}
+                    pedido={pedido}
+                    eliminarPedido={eliminarPedido}
+                  />
+                ))}
+              </div>
+            }
+          ></Route>
+
+          <Route
+            path="/buscar"
+            element={
+              <div className="container buscador">
+                <Buscador
+                  pedidos={pedidos}
+                  setPedidoEncontrado={setPedidoEncontrado}
+                />
+              </div>
+            }
+          ></Route>
+
+          <Route path="/" component={<App />} />
+        </Routes>
+      </Router>
       <div className="container">
         {pedidoEncontrado?.id && (
           <Pedido
@@ -55,19 +88,17 @@ function App() {
           />
         )}
       </div>
-      <div className="ten columns offset-by-one">
-        <Formulario crearPedido={crearPedido} pedidos={pedidos} />
+
+      <div className="row">
+        <div className="four columns offset-by-one ">
+          <img src={ImgHome} alt="" className="img-home" />
+        </div>
+        <div className="four columns home-tittle">
+          <h1>Comenzá a crear tus pedidos:</h1>
+        </div>
       </div>
-      <div className="container">
-        <h2>{titulo}</h2>
-        {pedidos.map((pedido) => (
-          <Pedido
-            key={pedido.id}
-            pedido={pedido}
-            eliminarPedido={eliminarPedido}
-          />
-        ))}
-      </div>
+
+      <div className="ten columns offset-by-one"></div>
     </>
   );
 }

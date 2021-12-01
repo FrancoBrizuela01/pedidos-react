@@ -149,72 +149,130 @@ button.button-primary:hover {
   border: 1px solid rgba(7, 250, 100, 0.966);
 }
 
-.title {
-  padding-top: 20px;
-  padding-bottom: 30px;
+.home-tittle{
+    padding-top: 30rem;
+    padding-right: 10rem;
 }
 
 .buscador {
+  position: inherit;
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
+.img-home {
+  width: 100%;
+  background: transparent;
+  margin-top: 100px;
+}
+
 /*NAVBAR*/
-.navBar {
-  background-color: #fff;
+li {
+  list-style: none;
 }
 
-/*Floats each item to the left with padding of 14 & 16 px.
-Removes the underline with text decoration = none.*/
-.navBar a {
-  float: left;
-  color: grey;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  font-family: Tahoma;
+.header {
+  border-bottom: 1px solid #e2e8f0;
 }
 
-/*Background color change during hover state*/
-.navBar a:hover {
-  background-color: white;
-  color: #009cde;
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: inherit;
+  padding: 0.5rem 1.5rem;
+  padding-top: 30px;
 }
 
-/*Hides the menu Icon which will show when the nav needs to be responsive*/
-.navBar .icon {
+.hamburger {
   display: none;
 }
 
-/*Set your custom screen width here replacing 700*/
-@media (max-width: 700px) {
-  /*Ignores the first link (which is Home) in the div and       applies 'display = none' to everything else.   Basically hiding everything but Home*/
-  .navBar a:not(:first-child) {
-    display: none;
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 550;
+  color: rgb(195, 125, 178);
+  font-family: "Noto Sans", sans-serif;
+  transition: 0.4s;
+}
+
+.nav-link:hover {
+  color: rgb(228, 218, 225);
+  border-bottom: 2px solid rgb(195, 125, 178);
+}
+
+.nav-logo {
+  font-weight: 600;
+  color: rgb(195, 125, 178);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 2.4rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
   }
-  /*Brings the menu icon into view and floats it to the right*/
-  .navBar a.icon {
-    display: block;
-    float: right;
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 8rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
 
-  /*The navBar class will be changed to 'navBar responsive' using JS. This chunk of CSS makes the menu icon stay where it is by making the position absolute within it's parent 'right top corner'. Without this, the icon will get kicked around when the items are collapsed and expanded*/
-  .navBar.responsive {
-    position: relative;
-  }
-  .navBar.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+  .nav-menu.active {
+    left: 0;
   }
 
-  /*Removes the originally set float and brings them to view*/
-  .navBar.responsive a {
-    float: none;
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
     display: block;
-    text-align: left;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+/*------------*/
 
 /* Larger than mobile */
 @media (min-width: 400px) {

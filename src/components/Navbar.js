@@ -2,52 +2,37 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const Navbar = () => {
-  function Home() {
-    return (
-      <div>
-        <h2>Home</h2>
-      </div>
-    );
-  }
+  
 
-  function About() {
-    return (
-      <div>
-        <h2>About</h2>
-      </div>
-    );
-  }
-
-  function Dashboard() {
-    return (
-      <div>
-        <h2>Dashboard</h2>
-      </div>
-    );
-  }
   return (
     <>
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="/">Pedidos</Link>
+      <div className="header">
+        <div className="navbar">
+          <div className="nav-logo">Creador de Pedidos</div>
+          <ul className="nav-menu">
+            <li className="nav-item">
+              <Link to="/formulario" className="nav-link">
+                Crear pedido
+              </Link>
             </li>
-            <li>
-              <Link to="/about">About</Link>
+            <li className="nav-item">
+              <Link to="/pedido" className="nav-link">
+                Ver pedidos
+              </Link>
             </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
+            <li className="nav-item">
+              <Link to="/buscar" className="nav-link">
+                Buscar pedidos
+              </Link>
             </li>
           </ul>
-          <hr />
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/dashboard" element={<Dashboard />}></Route>
-          </Routes>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
         </div>
-      </Router>
+      </div>
     </>
   );
 };
