@@ -7,7 +7,7 @@ const Buscador = ({ pedidos, setPedidoEncontrado }) => {
     const pedidoEncontrado = pedidos.map((e) => {
       console.log(e);
       if (valor === e.id) {
-          console.log("se guardo juan");
+        console.log("se guardo juan");
         return e;
       }
     });
@@ -16,14 +16,12 @@ const Buscador = ({ pedidos, setPedidoEncontrado }) => {
 
   return (
     <>
-      <label>
-        Buscador <span>*</span>
-      </label>
+      <label>Buscador</label>
       <input
         type="text"
         name="buscador"
         className="u-full-width"
-        placeholder="buscadame esta"
+        placeholder="Numero de orden"
         onChange={(e) => setValor(e.target.value)}
       />
       <button onClick={() => buscar()}>Buscar</button>

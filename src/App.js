@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Formulario from "./components/Formulario";
 import Pedido from "./components/Pedido";
 import Buscador from "./components/Buscador";
+import Navbar from "./components/Navbar";
+
 
 function App() {
   let pedidosIniciales = JSON.parse(localStorage.getItem("pedidos"));
@@ -37,7 +39,11 @@ function App() {
 
   return (
     <>
-      <div className="container">
+      <Navbar/>
+      <div className="container title">
+        <h1>Administración de Pedidos</h1>
+      </div>
+      <div className="container buscador">
         <Buscador pedidos={pedidos} setPedidoEncontrado={setPedidoEncontrado} />
       </div>
       <div className="container">
@@ -49,12 +55,10 @@ function App() {
           />
         )}
       </div>
-      <div className="container title">
-        <h1>Administración de Pedidos</h1>
-      </div>
-
-      <div className="container">
+      <div className="ten columns offset-by-one">
         <Formulario crearPedido={crearPedido} pedidos={pedidos} />
+      </div>
+      <div className="container">
         <h2>{titulo}</h2>
         {pedidos.map((pedido) => (
           <Pedido
@@ -63,8 +67,6 @@ function App() {
             eliminarPedido={eliminarPedido}
           />
         ))}
-        {/* </div> */}
-        {/* </div> */}
       </div>
     </>
   );
