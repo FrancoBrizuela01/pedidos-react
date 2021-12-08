@@ -8,13 +8,15 @@ const Navbar = () => {
     <>
       <div className="header">
         <div className="navbar">
-          <div className="nav-logo">Creador de Pedidos</div>
+          <div className="nav-logo">
+            <a href="/formulario">Creador de Pedidos</a>
+          </div>
           <ul className="nav-menu">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/formulario" className="nav-link">
                 Crear pedido
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="/pedido" className="nav-link">
                 Ver pedidos

@@ -1,3 +1,8 @@
+:root {
+  --first-color: rgb(195, 125, 178);
+  --second-color: rgb(250, 244, 248);
+}
+
 html {
   min-height: 100%;
 }
@@ -13,17 +18,17 @@ body {
   padding-bottom: 5rem;
 }
 h1 {
-  color: white;
+  color: var(--first-color);
   padding: 1rem 0;
   text-align: center;
   text-transform: uppercase;
   font-family: "Noto Sans", sans-serif;
   font-size: 4rem;
+  font-weight: bold;
 }
 h2 {
-  color: white;
+  color: var(--second-color);
   padding: 1rem 0;
-  /* text-transform: uppercase; */
   font-family: "Noto Sans", sans-serif;
   font-size: 3rem;
 }
@@ -35,7 +40,7 @@ p a:hover {
 }
 
 .lista-pedido .media {
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid var(--second-color);
   padding-bottom: 3rem;
 }
 
@@ -53,7 +58,7 @@ p a:hover {
 }
 
 label {
-  color: white;
+  color: var(--second-color);
 }
 
 label span {
@@ -71,10 +76,12 @@ input[type="time"] {
   box-sizing: border-box;
 }
 
+.container{
+    position: unset;
+}
+
 .pedido {
-  /* padding: 2rem; */
   background: white;
-  /* border-bottom: 1px solid #e1e1e1; */
   color: black;
   border: 1px solid rgba(223, 212, 212, 0.246);
   border-radius: 60px;
@@ -83,7 +90,6 @@ input[type="time"] {
   padding-right: 20px;
   padding-left: 20px;
   margin-bottom: 20px;
-  /* background-color: rgba(251, 247, 247, 0.061); */
 }
 
 .pedido p {
@@ -136,22 +142,26 @@ form {
   font-family: "Noto Sans", sans-serif;
 }
 
+.btn-iniciar {
+  margin-left: 15rem;
+}
+
 button.button-primary {
   border-radius: 60px;
-  border: 1px solid rgba(7, 250, 100, 0.966);
-  background-color: rgba(7, 250, 100, 0.966);
+  border: 1px solid var(--first-color);
+  background-color: var(--first-color);
   transition: 0.3s;
 }
 
 button.button-primary:hover {
   letter-spacing: 1.8px;
-  background-color: rgba(7, 250, 100, 0.966);
-  border: 1px solid rgba(7, 250, 100, 0.966);
+  background-color: var(--first-color);
+  border: 1px solid var(--first-color);
 }
 
-.home-tittle{
-    padding-top: 30rem;
-    padding-right: 10rem;
+.home-tittle {
+  padding-top: 30rem;
+  padding-right: 10rem;
 }
 
 .buscador {
@@ -172,7 +182,7 @@ li {
 }
 
 .header {
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--second-color);
 }
 
 .navbar {
@@ -212,21 +222,22 @@ li {
   text-decoration: none;
   font-size: 1.7rem;
   font-weight: 550;
-  color: rgb(195, 125, 178);
+  color: var(--first-color);
   font-family: "Noto Sans", sans-serif;
   transition: 0.4s;
 }
 
 .nav-link:hover {
-  color: rgb(228, 218, 225);
-  border-bottom: 2px solid rgb(195, 125, 178);
+  color: var(--second-color);
+  border-bottom: 2px solid var(--first-color);
 }
 
-.nav-logo {
+.nav-logo a {
   font-weight: 600;
-  color: rgb(195, 125, 178);
+  color: var(--first-color);
   font-family: "Noto Sans", sans-serif;
   font-size: 2.4rem;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -238,12 +249,16 @@ li {
     left: -100%;
     top: 8rem;
     flex-direction: column;
-    background-color: #fff;
+    background-color: var(--first-color);
     width: 100%;
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-link{
+      color: var(--second-color);
   }
 
   .nav-menu.active {
@@ -301,9 +316,9 @@ li {
 
 /* Larger than tablet */
 @media (min-width: 770px) {
-  button.button-primary {
-    margin-left: 1rem;
-  }
+  /* button.button-primary {
+    margin-left: 19rem;
+  } */
 
   h1 {
     font-size: 3.5rem;

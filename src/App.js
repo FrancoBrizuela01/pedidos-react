@@ -42,17 +42,18 @@ function App() {
     <>
       <Router>
         <Navbar />
+        <Formulario crearPedido={crearPedido} pedidos={pedidos} />
         <Routes>
-          <Route
+          {/* <Route
             path="/formulario"
             element={<Formulario crearPedido={crearPedido} pedidos={pedidos} />}
-          ></Route>
+          ></Route> */}
 
           <Route
             path="/pedido"
             element={
               <div className="container">
-                <h2>{titulo}</h2>
+                <h1>{titulo}</h1>
                 {pedidos.map((pedido) => (
                   <Pedido
                     key={pedido.id}
@@ -79,6 +80,7 @@ function App() {
           <Route path="/" component={<App />} />
         </Routes>
       </Router>
+
       <div className="container">
         {pedidoEncontrado?.id && (
           <Pedido
@@ -88,17 +90,6 @@ function App() {
           />
         )}
       </div>
-
-      <div className="row">
-        <div className="four columns offset-by-one ">
-          <img src={ImgHome} alt="" className="img-home" />
-        </div>
-        <div className="four columns home-tittle">
-          <h1>Comenzá a crear tus pedidos:</h1>
-        </div>
-      </div>
-
-      <div className="ten columns offset-by-one"></div>
     </>
   );
 }
