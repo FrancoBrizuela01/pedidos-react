@@ -47,7 +47,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
       proveedor.trim() === "" ||
       fecha.trim() === "" ||
       hora.trim() === "" ||
-      lugar.trim() === ""
+      lugar.trim() === "" 
     ) {
       actualizarError(true);
       return;
@@ -57,8 +57,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
 
     actualizarPedido({
       ...pedido,
-      id: uuidv4(),
-      orden: pedidos[pedidos.length - 1].orden + 1,
+      id: uuidv4()
     });
 
     console.log(pedidos[pedidos.length - 1]);
@@ -74,7 +73,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
       fecha: "",
       hora: "",
       lugar: "",
-      descripcion: "",
+      descripcion: ""
     });
   };
 

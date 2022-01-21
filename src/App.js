@@ -12,7 +12,7 @@ function App() {
     pedidosIniciales = [];
   }
 
-  const [pedidoEncontrado, setPedidoEncontrado] = useState("");
+  const [pedidosEncontrados, setPedidosEncontrados] = useState("");
 
   const [pedidos, guardarPedidos] = useState(pedidosIniciales);
 
@@ -41,55 +41,75 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
-        <Formulario crearPedido={crearPedido} pedidos={pedidos} />
+        <Navbar 
+            setPedidosEncontrados={setPedidosEncontrados}
+        />
         <Routes>
-          {/* <Route
+          <Route
+            path="/"
+            element={
+              <div className="container">
+                <h1 className="tittleprimary">Administrá tus pedidos</h1>
+              </div>
+            }
+          ></Route>
+
+          <Route
             path="/formulario"
             element={<Formulario crearPedido={crearPedido} pedidos={pedidos} />}
-          ></Route> */}
+          ></Route>
 
           <Route
             path="/pedido"
             element={
               <div className="container">
                 <h1>{titulo}</h1>
-                {pedidos.map((pedido) => (
+                <div className="container buscador">
+                  <Buscador
+                    pedidos={pedidos}
+                    setPedidosEncontrados={setPedidosEncontrados}
+                  />
+                </div>
+                {pedidosEncontrados.length > 0 ?       
+                    <div className="container">
+                    {pedidosEncontrados &&
+                    pedidosEncontrados.map((e, index) => (
+                        <Pedido
+                        key={index}
+                        pedido={e}
+                        eliminarPedido={eliminarPedido}
+                        />
+                    ))}
+                    </div> :
+                      pedidos.map((pedido) => (
                   <Pedido
                     key={pedido.id}
                     pedido={pedido}
                     eliminarPedido={eliminarPedido}
                   />
-                ))}
+                ))
+                }
+
               </div>
             }
           ></Route>
 
-          <Route
+          {/* <Route
             path="/buscar"
             element={
               <div className="container buscador">
                 <Buscador
                   pedidos={pedidos}
-                  setPedidoEncontrado={setPedidoEncontrado}
+                  setPedidosEncontrados={setPedidosEncontrados}
                 />
               </div>
             }
-          ></Route>
+          ></Route> */}
 
           <Route path="/" component={<App />} />
         </Routes>
       </Router>
 
-      <div className="container">
-        {pedidoEncontrado?.id && (
-          <Pedido
-            key={pedidoEncontrado.id}
-            pedido={pedidoEncontrado}
-            eliminarPedido={eliminarPedido}
-          />
-        )}
-      </div>
     </>
   );
 }

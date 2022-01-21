@@ -1,7 +1,7 @@
 import React from "react";
 
 const Pedido = ({ pedido, eliminarPedido }) => {
-  const msj = "Hola como estas? soy ale ya te agende!!";
+  const msj = "Hola como estas? ya te agende!!";
   const url = `https://wa.me/54${pedido.celular}?text=${msj}`;
 
   return (

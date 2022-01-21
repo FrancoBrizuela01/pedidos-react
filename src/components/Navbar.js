@@ -1,32 +1,34 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-const Navbar = () => {
-  
-
+const Navbar = ({ setPedidosEncontrados }) => {
   return (
     <>
       <div className="header">
         <div className="navbar">
           <div className="nav-logo">
-            <a href="/formulario">Creador de Pedidos</a>
+            <a href="/">Creador de Pedidos</a>
           </div>
           <ul className="nav-menu">
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link to="/formulario" className="nav-link">
                 Crear pedido
               </Link>
-            </li> */}
+            </li>
             <li className="nav-item">
-              <Link to="/pedido" className="nav-link">
+              <Link
+                to="/pedido"
+                className="nav-link"
+                onClick={() => setPedidosEncontrados([])}
+              >
                 Ver pedidos
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/buscar" className="nav-link">
                 Buscar pedidos
               </Link>
-            </li>
+            </li> */}
           </ul>
           <div class="hamburger">
             <span class="bar"></span>

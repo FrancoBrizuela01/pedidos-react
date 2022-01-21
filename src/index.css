@@ -1,5 +1,5 @@
 :root {
-  --first-color: rgb(195, 125, 178);
+  --first-color: #c37db2;
   --second-color: rgb(250, 244, 248);
 }
 
@@ -26,6 +26,11 @@ h1 {
   font-size: 4rem;
   font-weight: bold;
 }
+
+.tittleprimary{
+    margin-top: 30%;
+}
+
 h2 {
   color: var(--second-color);
   padding: 1rem 0;
@@ -170,11 +175,11 @@ button.button-primary:hover {
   margin-bottom: 30px;
 }
 
-.img-home {
+/* .img-home {
   width: 100%;
   background: transparent;
   margin-top: 100px;
-}
+} */
 
 /*NAVBAR*/
 li {

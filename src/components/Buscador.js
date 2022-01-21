@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 
-const Buscador = ({ pedidos, setPedidoEncontrado }) => {
+const Buscador = ({ pedidos, setPedidosEncontrados }) => {
   const [valor, setValor] = useState("");
 
   const buscar = () => {
-    const pedidoEncontrado = pedidos.map((e) => {
-      console.log(e);
-      if (valor === e.id) {
-        console.log("se guardo juan");
-        return e;
-      }
-    });
-    setPedidoEncontrado(pedidoEncontrado[0]);
+    const pedidosEncontrados = pedidos.filter((e) => (
+      valor.toLowerCase() === e.cliente.toLowerCase()
+    ));
+    console.log(pedidosEncontrados);
+    setPedidosEncontrados(pedidosEncontrados);
   };
 
   return (
@@ -21,7 +18,7 @@ const Buscador = ({ pedidos, setPedidoEncontrado }) => {
         type="text"
         name="buscador"
         className="u-full-width"
-        placeholder="Numero de orden"
+        placeholder="Nombre del cliente"
         onChange={(e) => setValor(e.target.value)}
       />
       <button onClick={() => buscar()}>Buscar</button>
