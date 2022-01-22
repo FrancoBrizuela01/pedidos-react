@@ -4,7 +4,7 @@ import Formulario from "./components/Formulario";
 import Pedido from "./components/Pedido";
 import Buscador from "./components/Buscador";
 import Navbar from "./components/Navbar";
-import ImgHome from "./img/img-home.svg";
+// import ImgHome from "./img/img1.svg";
 
 function App() {
   let pedidosIniciales = JSON.parse(localStorage.getItem("pedidos"));
@@ -41,15 +41,20 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar 
-            setPedidosEncontrados={setPedidosEncontrados}
-        />
+        <Navbar setPedidosEncontrados={setPedidosEncontrados} />
         <Routes>
           <Route
             path="/"
             element={
-              <div className="container">
-                <h1 className="tittleprimary">Administrá tus pedidos</h1>
+              <div className="wrapper">
+                <button className="btn-iniciar">
+                  <h3>INICIAR</h3>
+                </button>
+                <footer class="footer">
+                    <p>
+                      Copyright © 2022. @francobrizuela All Rights Reserved
+                    </p>
+                </footer>
               </div>
             }
           ></Route>
@@ -70,26 +75,26 @@ function App() {
                     setPedidosEncontrados={setPedidosEncontrados}
                   />
                 </div>
-                {pedidosEncontrados.length > 0 ?       
-                    <div className="container">
+                {pedidosEncontrados.length > 0 ? (
+                  <div className="container">
                     {pedidosEncontrados &&
-                    pedidosEncontrados.map((e, index) => (
+                      pedidosEncontrados.map((e, index) => (
                         <Pedido
-                        key={index}
-                        pedido={e}
-                        eliminarPedido={eliminarPedido}
+                          key={index}
+                          pedido={e}
+                          eliminarPedido={eliminarPedido}
                         />
-                    ))}
-                    </div> :
-                      pedidos.map((pedido) => (
-                  <Pedido
-                    key={pedido.id}
-                    pedido={pedido}
-                    eliminarPedido={eliminarPedido}
-                  />
-                ))
-                }
-
+                      ))}
+                  </div>
+                ) : (
+                  pedidos.map((pedido) => (
+                    <Pedido
+                      key={pedido.id}
+                      pedido={pedido}
+                      eliminarPedido={eliminarPedido}
+                    />
+                  ))
+                )}
               </div>
             }
           ></Route>
@@ -109,7 +114,6 @@ function App() {
           <Route path="/" component={<App />} />
         </Routes>
       </Router>
-
     </>
   );
 }

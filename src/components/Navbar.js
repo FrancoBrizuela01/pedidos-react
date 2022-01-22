@@ -7,7 +7,7 @@ const Navbar = ({ setPedidosEncontrados }) => {
       <div className="header">
         <div className="navbar">
           <div className="nav-logo">
-            <a href="/">Creador de Pedidos</a>
+            <a href="/">CREADOR DE PEDIDOS</a>
           </div>
           <ul className="nav-menu">
             <li className="nav-item">

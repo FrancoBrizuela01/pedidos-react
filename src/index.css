@@ -1,16 +1,19 @@
 :root {
-  --first-color: #c37db2;
+  --first-color: #fdfb71;
   --second-color: rgb(250, 244, 248);
 }
 
 html {
   min-height: 100%;
+  position: relative;
 }
 body {
-  background-color: #ff9451;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23FF9451' cx='50' cy='0' r='50'/%3E%3Cg fill='%23ff9753' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ff9a54' cx='50' cy='100' r='50'/%3E%3Cg fill='%23ff9d56' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffa158' cx='50' cy='200' r='50'/%3E%3Cg fill='%23ffa45a' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffa75b' cx='50' cy='300' r='50'/%3E%3Cg fill='%23ffaa5d' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffad5f' cx='50' cy='400' r='50'/%3E%3Cg fill='%23ffb060' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffb462' cx='50' cy='500' r='50'/%3E%3Cg fill='%23ffb764' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffba65' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ffbd67' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffc069' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ffc36b' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffc66c' cx='50' cy='800' r='50'/%3E%3Cg fill='%23ffca6e' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffcd70' cx='50' cy='900' r='50'/%3E%3Cg fill='%23ffd071' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23FFD373' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: contain;
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23FF9451' cx='50' cy='0' r='50'/%3E%3Cg fill='%23ff9753' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ff9a54' cx='50' cy='100' r='50'/%3E%3Cg fill='%23ff9d56' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffa158' cx='50' cy='200' r='50'/%3E%3Cg fill='%23ffa45a' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffa75b' cx='50' cy='300' r='50'/%3E%3Cg fill='%23ffaa5d' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffad5f' cx='50' cy='400' r='50'/%3E%3Cg fill='%23ffb060' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffb462' cx='50' cy='500' r='50'/%3E%3Cg fill='%23ffb764' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffba65' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ffbd67' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffc069' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ffc36b' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffc66c' cx='50' cy='800' r='50'/%3E%3Cg fill='%23ffca6e' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffcd70' cx='50' cy='900' r='50'/%3E%3Cg fill='%23ffd071' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23FFD373' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed; */
+  background-image: url("/src/img/img1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -27,8 +30,8 @@ h1 {
   font-weight: bold;
 }
 
-.tittleprimary{
-    margin-top: 30%;
+.tittleprimary {
+  margin-top: 30%;
 }
 
 h2 {
@@ -81,8 +84,8 @@ input[type="time"] {
   box-sizing: border-box;
 }
 
-.container{
-    position: unset;
+.container {
+  position: unset;
 }
 
 .pedido {
@@ -147,8 +150,52 @@ form {
   font-family: "Noto Sans", sans-serif;
 }
 
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-iniciar h3 {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
 .btn-iniciar {
-  margin-left: 15rem;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 20%;
+}
+
+.btn-iniciar:after {
+  content: "";
+  background-color: var(--first-color);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.btn-iniciar:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .btn-iniciar {
+    padding: 13px 50px 13px;
+  }
 }
 
 button.button-primary {
@@ -225,11 +272,15 @@ li {
 .nav-link {
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 550;
   color: var(--first-color);
-  font-family: "Noto Sans", sans-serif;
-  transition: 0.4s;
+  transition: 0.1s;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 1px rgb(3, 3, 3);
+  -webkit-text-fill-color: var(--first-color);
 }
 
 .nav-link:hover {
@@ -238,11 +289,12 @@ li {
 }
 
 .nav-logo a {
-  font-weight: 600;
-  color: var(--first-color);
-  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
   font-size: 2.4rem;
   text-decoration: none;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 1px rgb(3, 3, 3);
+  -webkit-text-fill-color: var(--first-color);
 }
 
 @media only screen and (max-width: 768px) {
@@ -262,8 +314,8 @@ li {
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
 
-  .nav-link{
-      color: var(--second-color);
+  .nav-link {
+    color: var(--second-color);
   }
 
   .nav-menu.active {
@@ -335,4 +387,18 @@ li {
     padding-top: 10px;
     background-color: rgba(251, 247, 247, 0.061);
   }
+}
+
+footer {
+  background-color: var(--first-color);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  color: black;
+  border-top: 2px solid black;
+}
+footer p{
+    margin-top: 12px;
+    text-align: center;
 }
