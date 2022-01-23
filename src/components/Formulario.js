@@ -86,7 +86,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
       ) : null}
 
       <form onSubmit={submitPedido}>
-        <h2>Crear pedido</h2>
+        <h2>CREAR PEDIDO</h2>
         <div class="row">
           <div class="six columns">
             <label>
@@ -118,7 +118,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
         </div>
 
         <div className="row">
-          <div class="four columns">
+          <div class="six columns">
             <label>
               Artículo <span>*</span>
             </label>
@@ -132,7 +132,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
             />
           </div>
 
-          <div class="four columns">
+          <div class="six columns">
             <label>
               Talle <span>*</span>
             </label>
@@ -145,8 +145,10 @@ const Formulario = ({ crearPedido, pedidos }) => {
               value={talle}
             />
           </div>
+        </div>
 
-          <div class="four columns">
+        <div className="row">
+          <div class="six columns">
             <label>
               Proveedor <span>*</span>
             </label>
@@ -159,10 +161,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
               value={proveedor}
             />
           </div>
-        </div>
-
-        <div className="row">
-          <div class="four columns">
+          <div class="six columns">
             <label>
               Fecha de entrega <span>*</span>
             </label>
@@ -174,8 +173,10 @@ const Formulario = ({ crearPedido, pedidos }) => {
               value={fecha}
             />
           </div>
+        </div>
 
-          <div class="four columns">
+        <div className="row">
+          <div class="six columns">
             <label>
               Hora de entrega <span>*</span>
             </label>
@@ -188,7 +189,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
             />
           </div>
 
-          <div class="four columns">
+          <div class="six columns">
             <label>
               Lugar de entrega <span>*</span>
             </label>
@@ -215,7 +216,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
         </div>
 
         <div className="row">
-          <div className="four columns offset-by-four ">
+          <div className="four columns  offset-by-four ">
             <button type="submit" className="u-full-width button-primary ">
               Agregar Pedido
             </button>
