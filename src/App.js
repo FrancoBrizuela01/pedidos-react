@@ -4,6 +4,7 @@ import Formulario from "./components/Formulario";
 import Pedido from "./components/Pedido";
 import Buscador from "./components/Buscador";
 import Navbar from "./components/Navbar";
+
 // import ImgHome from "./img/img1.svg";
 
 function App() {
@@ -47,9 +48,9 @@ function App() {
             path="/"
             element={
               <div className="wrapper">
-                <button className="btn-iniciar">
+                <Link to="/formulario"><button className="btn-iniciar">
                   <h3>INICIAR</h3>
-                </button>
+                </button></Link>
                 <footer class="footer">
                     <p>
                       Copyright © 2022. @francobrizuela All Rights Reserved

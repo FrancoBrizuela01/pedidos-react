@@ -4,23 +4,21 @@ const Buscador = ({ pedidos, setPedidosEncontrados }) => {
   const [valor, setValor] = useState("");
 
   const buscar = () => {
-    const pedidosEncontrados = pedidos.filter((e) => (
-      valor.toLowerCase() === e.cliente.toLowerCase()
-    ));
+    const pedidosEncontrados = pedidos.filter(
+      (e) => valor.toLowerCase() === e.cliente.toLowerCase()
+    );
     console.log(pedidosEncontrados);
     setPedidosEncontrados(pedidosEncontrados);
   };
 
   return (
     <>
-      <label>Buscador</label>
       <input
-        type="text"
+        type="search"
         name="buscador"
-        className="u-full-width"
-        placeholder="Nombre del cliente"
+        placeholder="Busca tu pedido, ingresa el nombre del cliente"
         onChange={(e) => setValor(e.target.value)}
-      />
+      ></input>
       <button onClick={() => buscar()}>Buscar</button>
     </>
   );
