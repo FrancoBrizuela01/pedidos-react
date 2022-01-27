@@ -5,8 +5,6 @@ import Pedido from "./components/Pedido";
 import Buscador from "./components/Buscador";
 import Navbar from "./components/Navbar";
 
-// import ImgHome from "./img/img1.svg";
-
 function App() {
   let pedidosIniciales = JSON.parse(localStorage.getItem("pedidos"));
   if (!pedidosIniciales) {
@@ -47,14 +45,14 @@ function App() {
           <Route
             path="/"
             element={
-              <div className="wrapper">
-                <Link to="/formulario"><button className="btn-iniciar">
-                  <h3>INICIAR</h3>
-                </button></Link>
+              <div className="divbtn-primary">
+                <Link to="/formulario">
+                  <button className="btn-primary">
+                    <h3>INICIAR</h3>
+                  </button>
+                </Link>
                 <footer class="footer">
-                    <p>
-                      Copyright © 2022. @francobrizuela All Rights Reserved
-                    </p>
+                  <p>Copyright © 2022. @francobrizuela All Rights Reserved</p>
                 </footer>
               </div>
             }
@@ -99,19 +97,6 @@ function App() {
               </div>
             }
           ></Route>
-
-          {/* <Route
-            path="/buscar"
-            element={
-              <div className="container buscador">
-                <Buscador
-                  pedidos={pedidos}
-                  setPedidosEncontrados={setPedidosEncontrados}
-                />
-              </div>
-            }
-          ></Route> */}
-
           <Route path="/" component={<App />} />
         </Routes>
       </Router>

@@ -1,5 +1,73 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import styled from "styled-components";
+
+const AlertError = styled.p`
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+`;
+
+const Form = styled.form`
+  border: 1px solid rgba(223, 212, 212, 0.246);
+  background-color: rgba(14, 14, 13, 0.753);
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 50px;
+  height: 62rem;
+`;
+
+const DivBtnPrimaryForm = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+`;
+
+const BtnPrimary = styled.button`
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &&::after {
+    content: "";
+    background-color: var(--first-color);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+
+  &&:hover::after {
+    top: 0px;
+    left: 0px;
+  }
+
+  > h3 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+`;
 
 const Formulario = ({ crearPedido, pedidos }) => {
   //state de pedidos
@@ -47,7 +115,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
       proveedor.trim() === "" ||
       fecha.trim() === "" ||
       hora.trim() === "" ||
-      lugar.trim() === "" 
+      lugar.trim() === ""
     ) {
       actualizarError(true);
       return;
@@ -57,7 +125,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
 
     actualizarPedido({
       ...pedido,
-      id: uuidv4()
+      id: uuidv4(),
     });
 
     console.log(pedidos[pedidos.length - 1]);
@@ -73,19 +141,19 @@ const Formulario = ({ crearPedido, pedidos }) => {
       fecha: "",
       hora: "",
       lugar: "",
-      descripcion: ""
+      descripcion: "",
     });
   };
 
   return (
     <>
       {error ? (
-        <p className="alerta-error">
+        <AlertError>
           Es necesario completar los campos obligatorios (*)
-        </p>
+        </AlertError>
       ) : null}
 
-      <form onSubmit={submitPedido}>
+      <Form onSubmit={submitPedido}>
         <h2>CREAR PEDIDO</h2>
         <div class="row">
           <div class="six columns">
@@ -215,14 +283,16 @@ const Formulario = ({ crearPedido, pedidos }) => {
           </div>
         </div>
 
-        <div className="row">
-          <div className="four columns  offset-by-four ">
-            <button type="submit" className="u-full-width button-primary ">
-              Agregar Pedido
-            </button>
-          </div>
-        </div>
-      </form>
+        <DivBtnPrimaryForm>
+          <BtnPrimary
+            type="submit"
+            // className="btn-primary"
+            styles="margin-top: 1px"
+          >
+            <h3>Agregar Pedido</h3>
+          </BtnPrimary>
+        </DivBtnPrimaryForm>
+      </Form>
     </>
   );
 };

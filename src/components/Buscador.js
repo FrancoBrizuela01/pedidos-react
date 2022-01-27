@@ -19,7 +19,11 @@ const Buscador = ({ pedidos, setPedidosEncontrados }) => {
         placeholder="Busca tu pedido, ingresa el nombre del cliente"
         onChange={(e) => setValor(e.target.value)}
       ></input>
-      <button onClick={() => buscar()}>Buscar</button>
+      <div className="divbtn-primary-seeker">
+        <button className="btn-primary" onClick={() => buscar()}>
+          <h3> Buscar</h3>
+        </button>
+      </div>
     </>
   );
 };
