@@ -17,21 +17,21 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+// const hamburger = document.querySelector(".hamburger");
+// const navMenu = document.querySelector(".nav-menu");
 
-hamburger.addEventListener("click", mobileMenu);
+// hamburger.addEventListener("click", mobileMenu);
 
-function mobileMenu() {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-}
+// function mobileMenu() {
+//   hamburger.classList.toggle("active");
+//   navMenu.classList.toggle("active");
+// }
 
-const navLink = document.querySelectorAll(".nav-link");
+// const navLink = document.querySelectorAll(".nav-link");
 
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
+// navLink.forEach((n) => n.addEventListener("click", closeMenu));
 
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
-}
+// function closeMenu() {
+//   hamburger.classList.remove("active");
+//   navMenu.classList.remove("active");
+// }

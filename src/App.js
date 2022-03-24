@@ -35,19 +35,19 @@ function App() {
   };
 
   const titulo =
-    pedidos.length === 0 ? "No hay pedidos" : "Administra tus pedidos";
+    pedidos.length === 0 ? "No hay pedidos" : "Pedidos";
 
   return (
     <>
       <Router>
         <Navbar setPedidosEncontrados={setPedidosEncontrados} />
         <Routes>
-          <Route
+          {/* <Route
             path="/"
             element={
-              <div className="divbtn-primary">
+              <div className="divbtn-primary container">
                 <Link to="/formulario">
-                  <button className="btn-primary">
+                  <button className="btn btn-primary">
                     <h3>INICIAR</h3>
                   </button>
                 </Link>
@@ -56,14 +56,48 @@ function App() {
                 </footer>
               </div>
             }
-          ></Route>
+          ></Route> */}
 
           <Route
-            path="/formulario"
-            element={<Formulario crearPedido={crearPedido} pedidos={pedidos} />}
+            path="/"
+            element={
+              <div className="container mt-5">
+                {" "}
+                <div className="row">
+                  <div className="col">
+                    <h1>{titulo}</h1>
+                    {pedidosEncontrados.length > 0 ? (
+                      <div className="">
+                        {pedidosEncontrados &&
+                          pedidosEncontrados.map((e, index) => (
+                            <Pedido
+                              key={index}
+                              pedido={e}
+                              eliminarPedido={eliminarPedido}
+                            />
+                          ))}
+                      </div>
+                    ) : (
+                      pedidos.map((pedido) => (
+                        <Pedido
+                          key={pedido.id}
+                          pedido={pedido}
+                          eliminarPedido={eliminarPedido}
+                        />
+                      ))
+                    )}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <Formulario crearPedido={crearPedido} pedidos={pedidos} />{" "}
+                  </div>
+                </div>
+              </div>
+            }
           ></Route>
 
-          <Route
+          {/* <Route
             path="/pedido"
             element={
               <div className="container">
@@ -96,7 +130,7 @@ function App() {
                 )}
               </div>
             }
-          ></Route>
+          ></Route> */}
           <Route path="/" component={<App />} />
         </Routes>
       </Router>
