@@ -13,15 +13,20 @@ const Buscador = ({ pedidos, setPedidosEncontrados }) => {
 
   return (
     <>
-      <input
-        type="search"
-        name="buscador"
-        placeholder="Busca tu pedido, ingresa el nombre del cliente"
-        onChange={(e) => setValor(e.target.value)}
-      ></input>
-      <div className="divbtn-primary-seeker">
-        <button className="btn-primary" onClick={() => buscar()}>
-          <h3> Buscar</h3>
+      <div className="d-flex">
+        <input
+          className="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          onChange={(e) => setValor(e.target.value)}
+        />
+        <button
+          className="btn btn-outline-success"
+          type="submit"
+          onClick={() => buscar()}
+        >
+          Buscar
         </button>
       </div>
     </>

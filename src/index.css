@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto&display=swap");
+
 :root {
-  --first-color: #fdfb71;
-  --second-color: rgb(250, 244, 248);
+  --first-color: #59d8a4;
+  --second-color: #fff;
+  --third-color: #212529;
 }
 
 html {
@@ -8,18 +11,90 @@ html {
   position: relative;
 }
 body {
-  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23FF9451' cx='50' cy='0' r='50'/%3E%3Cg fill='%23ff9753' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ff9a54' cx='50' cy='100' r='50'/%3E%3Cg fill='%23ff9d56' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffa158' cx='50' cy='200' r='50'/%3E%3Cg fill='%23ffa45a' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffa75b' cx='50' cy='300' r='50'/%3E%3Cg fill='%23ffaa5d' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffad5f' cx='50' cy='400' r='50'/%3E%3Cg fill='%23ffb060' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffb462' cx='50' cy='500' r='50'/%3E%3Cg fill='%23ffb764' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffba65' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ffbd67' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffc069' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ffc36b' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffc66c' cx='50' cy='800' r='50'/%3E%3Cg fill='%23ffca6e' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffcd70' cx='50' cy='900' r='50'/%3E%3Cg fill='%23ffd071' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23FFD373' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed; */
-  /* background-image: url("/src/img/img1.jpg"); */
-  background-color: grey;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-color: var(--second-color);
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   min-height: 100%;
   padding-bottom: 5rem;
+}
+
+.title {
+  text-decoration: none;
+  color: var(--second-color);
+  font-size: 28px;
+  padding-right: 25px;
+}
+
+.title:hover {
+  text-shadow: 0 0 10px var(--first-color);
+  color: var(--second-color);
+}
+
+.title-second {
+  color: var(--first-color);
+}
+
+.container-title {
+  padding: 10px;
+}
+
+.firstletter {
+  color: var(--first-color);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--second-color);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--first-color);
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #fff;
+  outline: 0;
+  box-shadow: 0 0 0 0.15rem var(--first-color);
+}
+
+.btn-outline-success {
+  color: var(--first-color);
+  border-color: var(--first-color);
+}
+
+.btn-outline-success:hover {
+  color: var(--second-color);
+  background-color: var(--first-color);
+  border-color: var(--first-color);
+}
+
+.card {
+  border: 2px solid var(--third-color);
+  border-radius: 0;
+}
+
+.list-group {
+  border-radius: 0;
+}
+
+.list-group-item ion-icon {
+  padding-left: 5px;
+  color: green;
+}
+
+.list-group-item p {
+  color: var(--first-color);
+}
+
+.list-group-item span {
+  color: var(--third-color);
+}
+
+.list-group-item a {
+  text-decoration: none;
+  color: var(--third-color);
 }
 
 .list-group-item {
@@ -45,19 +120,40 @@ body {
   background: none;
 }
 
+.btn-delete {
+  width: 20%;
+}
+
+.btn-delete {
+  color: var(--second-color);
+  border-color: red;
+  background-color: red;
+  transition: 0.5;
+}
+
+.btn-delete:hover {
+  color: red;
+  border-color: red;
+  background-color: var(--second-color);
+  box-shadow: 0 0 5px red;
+}
+
+.btnAddOrder {
+  width: 10rem;
+}
+
 @media (min-width: 576px) {
   .list-group-horizontal {
     flex-direction: row;
   }
-  
 }
 
 @media (max-width: 768px) {
   .list-group-horizontal {
     flex-direction: row;
   }
-  .list-group{
-      display: block;
+  .list-group {
+    display: block;
   }
 }
 

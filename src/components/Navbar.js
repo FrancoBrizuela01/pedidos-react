@@ -1,77 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import styled from "styled-components";
+import Buscador from "./Buscador";
 
-// const Header = styled.div`
-//   border-bottom: 1px solid var(--second-color);
-// `;
-
-// const NavbarContainer = styled.div`
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: inherit;
-//   padding: 0.5rem 1.5rem;
-//   padding-top: 30px;
-
-//   @media only screen and (max-width: 768px) {
-//     justify-content: space-between;
-//   }
-// `;
-
-// const NavbarLogo = styled.div`
-//   > a {
-//     font-weight: bold;
-//     font-size: 2.4rem;
-//     text-decoration: none;
-//     letter-spacing: 1px;
-//     -webkit-text-stroke: 1px rgb(3, 3, 3);
-//     -webkit-text-fill-color: var(--first-color);
-//   }
-// `;
-
-// const NavbarItem = styled.li`
-//   margin-left: 5rem;
-
-//   @media only screen and (max-width: 768px) {
-//     margin: 2.5rem 0;
-//   }
-// `;
-
-const Navbar = ({ setPedidosEncontrados }) => {
+const Navbar = ({ setPedidosEncontrados, pedidos }) => {
   return (
     <>
-      {/* <Header>
-        <NavbarContainer>
-          <NavbarLogo>
-            <a href="/">CREADOR DE PEDIDOS</a>
-          </NavbarLogo>
-          <ul className="nav-menu">
-            <NavbarItem>
-              <Link to="/formulario" className="nav-link">
-                Crear pedido
-              </Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link
-                to="/pedido"
-                className="nav-link"
-                onClick={() => setPedidosEncontrados([])}
-              >
-                Ver pedidos
-              </Link>
-            </NavbarItem>
-          </ul>
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </NavbarContainer>
-      </Header> */}
-
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" >
         <div className="container-fluid">
-          <a href="/">CREADOR DE PEDIDOS</a>
+          <a href="/" className="title">
+            <span className="firstletter">C</span>lothing
+            <span className="firstletter">O</span>rders
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -86,31 +24,24 @@ const Navbar = ({ setPedidosEncontrados }) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/formulario" className="nav-link">
+                <a href="#formulario" className="nav-link">
                   Crear pedido
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link
-                  to="/pedido"
+                <a
+                  href="#pedidos"
                   className="nav-link"
                   onClick={() => setPedidosEncontrados([])}
                 >
                   Ver pedidos
-                </Link>
+                </a>
               </li>
             </ul>
-            <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Buscar
-              </button>
-            </form>
+            <Buscador
+              pedidos={pedidos}
+              setPedidosEncontrados={setPedidosEncontrados}
+            />
           </div>
         </div>
       </nav>

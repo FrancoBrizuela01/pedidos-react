@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Formulario from "./components/Formulario";
 import Pedido from "./components/Pedido";
-import Buscador from "./components/Buscador";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -34,30 +33,16 @@ function App() {
     guardarPedidos(nuevosPedidos);
   };
 
-  const titulo =
-    pedidos.length === 0 ? "No hay pedidos" : "Pedidos";
+  const titulo = pedidos.length === 0 ? "No hay pedidos" : "Pedidos";
 
   return (
     <>
       <Router>
-        <Navbar setPedidosEncontrados={setPedidosEncontrados} />
+        <Navbar
+          setPedidosEncontrados={setPedidosEncontrados}
+          pedidos={pedidos}
+        />
         <Routes>
-          {/* <Route
-            path="/"
-            element={
-              <div className="divbtn-primary container">
-                <Link to="/formulario">
-                  <button className="btn btn-primary">
-                    <h3>INICIAR</h3>
-                  </button>
-                </Link>
-                <footer class="footer">
-                  <p>Copyright © 2022. @francobrizuela All Rights Reserved</p>
-                </footer>
-              </div>
-            }
-          ></Route> */}
-
           <Route
             path="/"
             element={
@@ -65,9 +50,13 @@ function App() {
                 {" "}
                 <div className="row">
                   <div className="col">
-                    <h1>{titulo}</h1>
+                    <div className="container-title bg-dark">
+                      <h1 className="title-second" id="pedidos">
+                        {titulo}
+                      </h1>
+                    </div>
                     {pedidosEncontrados.length > 0 ? (
-                      <div className="">
+                      <div>
                         {pedidosEncontrados &&
                           pedidosEncontrados.map((e, index) => (
                             <Pedido
@@ -96,41 +85,6 @@ function App() {
               </div>
             }
           ></Route>
-
-          {/* <Route
-            path="/pedido"
-            element={
-              <div className="container">
-                <h1>{titulo}</h1>
-                <div className="container buscador">
-                  <Buscador
-                    pedidos={pedidos}
-                    setPedidosEncontrados={setPedidosEncontrados}
-                  />
-                </div>
-                {pedidosEncontrados.length > 0 ? (
-                  <div className="container">
-                    {pedidosEncontrados &&
-                      pedidosEncontrados.map((e, index) => (
-                        <Pedido
-                          key={index}
-                          pedido={e}
-                          eliminarPedido={eliminarPedido}
-                        />
-                      ))}
-                  </div>
-                ) : (
-                  pedidos.map((pedido) => (
-                    <Pedido
-                      key={pedido.id}
-                      pedido={pedido}
-                      eliminarPedido={eliminarPedido}
-                    />
-                  ))
-                )}
-              </div>
-            }
-          ></Route> */}
           <Route path="/" component={<App />} />
         </Routes>
       </Router>
