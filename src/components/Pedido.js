@@ -1,13 +1,16 @@
 import React from "react";
 
-const Pedido = ({ pedido, eliminarPedido }) => {
-  const msj = `DATOS DEL PEDIDO:  PEDIDO: ${pedido.articulo}, TALLE: ${pedido.talle}, LUGAR DE ENTREGA: ${pedido.lugar}, FECHA DE ENTREGA: ${pedido.fecha} a las ${pedido.hora} horas`;
+const Pedido = ({ pedido, eliminarPedido, background, background2 }) => {
+  const msj = `DATOS DEL PEDIDO:  %0D%0A PEDIDO: ${pedido.articulo}, TALLE: ${pedido.talle}, LUGAR DE ENTREGA: ${pedido.lugar}, FECHA DE ENTREGA: ${pedido.fecha} a las ${pedido.hora} horas`;
 
   const url = `https://wa.me/54${pedido.celular}?text=${msj}`;
 
   return (
     <div class="mb-3">
-      <div className="card" id="pedido">
+      <div
+        className={` card ${background2 ? background2 : null}  `}
+        id="pedido"
+      >
         <div className="card-body">
           <div className="list-group list-group-horizontal">
             <div className="list-group-item">
@@ -18,7 +21,7 @@ const Pedido = ({ pedido, eliminarPedido }) => {
 
             <div className="list-group-item">
               <p>
-                Celular:
+                CELULAR:
                 <span>
                   {" "}
                   <a
@@ -36,22 +39,22 @@ const Pedido = ({ pedido, eliminarPedido }) => {
             </div>
             <div className="list-group-item">
               <p>
-                Articulo:<span> {pedido.articulo}</span>
+                ARTICULO:<span> {pedido.articulo}</span>
               </p>
             </div>
             <div className="list-group-item">
               <p>
-                Talle:<span> {pedido.talle}</span>
+                TALLE:<span> {pedido.talle}</span>
               </p>
             </div>
             <div className="list-group-item">
               <p>
-                Proveedor:<span> {pedido.proveedor}</span>
+                PROVEEDOR:<span> {pedido.proveedor}</span>
               </p>
             </div>
             <div className="list-group-item">
               <p>
-                Descripción:
+                DESCRIPCION:
                 <span className=""> {pedido.descripcion}</span>
               </p>
             </div>
@@ -60,27 +63,33 @@ const Pedido = ({ pedido, eliminarPedido }) => {
           <div className="list-group list-group-horizontal">
             <div className="list-group-item">
               <p>
-                Fecha de entrega:<span> {pedido.fecha}</span>
+                FECHA DE ENTREGA:<span> {pedido.fecha}</span>
               </p>
             </div>
             <div className="list-group-item">
               <p>
-                Hora de entrega:<span> {pedido.hora}</span>
+                HORA DE ENTREGA:<span> {pedido.hora}</span>
               </p>
             </div>
             <div className="list-group-item">
               <p>
-                Lugar de entrega:<span> {pedido.lugar}</span>
+                LUGAR DE ENTREGA:<span> {pedido.lugar}</span>
               </p>
             </div>
           </div>
         </div>
-        <button
-          className="btn btn-outline-success btn-delete"
-          onClick={() => eliminarPedido(pedido.id)}
-        >
-          Eliminar
-        </button>
+        <div className="container">
+          <div className="row">
+            <div className="col text-center">
+              <button
+                className="btn btn-outline-success btn-delete"
+                onClick={() => eliminarPedido(pedido.id)}
+              >
+                Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import Buscador from "./Buscador";
 const Navbar = ({ setPedidosEncontrados, pedidos }) => {
   return (
     <>
-      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" >
+      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a href="/" className="title">
             <span className="firstletter">C</span>lothing
@@ -30,7 +30,7 @@ const Navbar = ({ setPedidosEncontrados, pedidos }) => {
               </li>
               <li className="nav-item">
                 <a
-                  href="#pedidos"
+                  href="#root"
                   className="nav-link"
                   onClick={() => setPedidosEncontrados([])}
                 >

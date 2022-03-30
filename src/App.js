@@ -33,7 +33,8 @@ function App() {
     guardarPedidos(nuevosPedidos);
   };
 
-  const titulo = pedidos.length === 0 ? "No hay pedidos" : "Pedidos";
+  const titulo = pedidos.length === 0 ? "NO HAY PEDIDOS" : "PEDIDOS";
+  const pedidosOrden = pedidos.length;
 
   return (
     <>
@@ -47,7 +48,6 @@ function App() {
             path="/"
             element={
               <div className="container mt-5">
-                {" "}
                 <div className="row">
                   <div className="col">
                     <div className="container-title bg-dark">
@@ -55,31 +55,34 @@ function App() {
                         {titulo}
                       </h1>
                     </div>
-                    {pedidosEncontrados.length > 0 ? (
-                      <div>
-                        {pedidosEncontrados &&
-                          pedidosEncontrados.map((e, index) => (
-                            <Pedido
-                              key={index}
-                              pedido={e}
-                              eliminarPedido={eliminarPedido}
-                            />
-                          ))}
-                      </div>
-                    ) : (
-                      pedidos.map((pedido) => (
-                        <Pedido
-                          key={pedido.id}
-                          pedido={pedido}
-                          eliminarPedido={eliminarPedido}
-                        />
-                      ))
-                    )}
+                    <div>
+                      {pedidosEncontrados &&
+                        pedidosEncontrados.map((e, index) => (
+                          <Pedido
+                            key={index}
+                            pedido={e}
+                            eliminarPedido={eliminarPedido}
+                            background={true}
+                            background2={"bg-dark"}
+                            estado={e.estado}
+                          />
+                        ))}
+                    </div>
+                    {pedidos.map((pedido) => (
+                      <Pedido
+                        key={pedido.id}
+                        pedido={pedido}
+                        eliminarPedido={eliminarPedido}
+                      />
+                    ))}
                   </div>
                 </div>
                 <div className="row">
                   <div className="col">
-                    <Formulario crearPedido={crearPedido} pedidos={pedidos} />{" "}
+                    <Formulario
+                      crearPedido={crearPedido}
+                      pedidosOrden={pedidosOrden}
+                    />
                   </div>
                 </div>
               </div>

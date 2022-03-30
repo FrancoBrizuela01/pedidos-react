@@ -12,7 +12,7 @@ const AlertError = styled.p`
   font-family: "Noto Sans", sans-serif;
 `;
 
-const Formulario = ({ crearPedido, pedidos }) => {
+const Formulario = ({ crearPedido, pedidosOrden }) => {
   //state de pedidos
   const [pedido, actualizarPedido] = useState({
     cliente: "",
@@ -66,12 +66,13 @@ const Formulario = ({ crearPedido, pedidos }) => {
 
     actualizarError(false);
 
-    actualizarPedido({
-      ...pedido,
-      id: uuidv4(),
-    });
+    // actualizarPedido({
+    //   ...pedido,
+    //   id: uuidv4(),
+    // });
 
-    console.log(pedidos[pedidos.length - 1]);
+    pedido.id = uuidv4();
+    pedido.orden = pedidosOrden;
 
     crearPedido(pedido);
 
@@ -97,14 +98,14 @@ const Formulario = ({ crearPedido, pedidos }) => {
       ) : null}
       <form onSubmit={submitPedido} className="mt-3 mb-3 " id="formulario">
         <div className="container-title bg-dark">
-          <h1 className="title-second">Nuevo pedido</h1>
+          <h1 className="title-second">NUEVO PEDIDO</h1>
         </div>
 
         <div className="card">
           <div className="list-group d-flex flex-row flex-wrap">
             <div className="list-group-item w-50 list-group-item-action">
               <label className="form-label">
-                Nombre cliente <span>*</span>
+                NOMBRE <span>*</span>
               </label>
               <input
                 type="text"
@@ -117,7 +118,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
             </div>
             <div className="list-group-item w-50 list-group-item-action">
               <label className="form-label">
-                Celular del cliente <span>*</span>
+                CELULAR<span>*</span>
               </label>
               <input
                 type="text"
@@ -130,7 +131,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
             </div>
             <div className="list-group-item w-50 list-group-item-action">
               <label className="form-label">
-                Talle <span>*</span>
+                TALLE <span>*</span>
               </label>
               <input
                 type="text"
@@ -143,18 +144,18 @@ const Formulario = ({ crearPedido, pedidos }) => {
             </div>
 
             <div className="list-group-item w-50 list-group-item-action">
-              <label className="form-label">Descripción</label>
-              <textarea
+              <label className="form-label">DESCRIPCIÓN</label>
+              <input
                 className="form-control"
                 name="descripcion"
                 onChange={actualizarState}
                 value={descripcion}
-              ></textarea>
+              ></input>
             </div>
 
             <div className="list-group-item w-50 list-group-item-action">
               <label className="form-label">
-                Proveedor <span>*</span>
+                PROVEEDOR <span>*</span>
               </label>
               <input
                 type="text"
@@ -167,7 +168,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
             </div>
             <div className="list-group-item w-50 list-group-item-action">
               <label className="form-label">
-                Artículo <span>*</span>
+                ARTÍCULO <span>*</span>
               </label>
               <input
                 type="text"
@@ -180,7 +181,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
             </div>
             <div className="list-group-item w-50 list-group-item-action">
               <label className="form-label">
-                Fecha de entrega <span>*</span>
+                FECHA DE ENTREGA <span>*</span>
               </label>
               <input
                 type="date"
@@ -192,7 +193,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
             </div>
             <div className="list-group-item w-50 list-group-item-action">
               <label className="form-label">
-                Hora de entrega <span>*</span>
+                HORA DE ENTREGA <span>*</span>
               </label>
               <input
                 type="time"
@@ -204,7 +205,7 @@ const Formulario = ({ crearPedido, pedidos }) => {
             </div>
             <div className="list-group-item w-50 list-group-item-action">
               <label className="form-label">
-                Lugar de entrega <span>*</span>
+                LUGAR DE ENTREGA <span>*</span>
               </label>
               <input
                 type="text"
