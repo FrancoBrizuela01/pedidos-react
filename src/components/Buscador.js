@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 const Buscador = ({ pedidos, setPedidosEncontrados }) => {
-  const [valor, setValor] = useState("");
+  const [valor, setValor] = useState(0);
 
   const buscar = () => {
     const pedidosEncontrados = pedidos.filter(
-      (e) => valor.toLowerCase() === e.cliente.toLowerCase()
+      (e) => Number(valor) === e.orden
     );
     console.log(pedidosEncontrados);
     setPedidosEncontrados(pedidosEncontrados);
@@ -17,7 +17,7 @@ const Buscador = ({ pedidos, setPedidosEncontrados }) => {
         <input
           className="form-control me-2"
           type="search"
-          placeholder="Buscar"
+          placeholder="Numero de orden"
           aria-label="Search"
           onChange={(e) => setValor(e.target.value)}
         />

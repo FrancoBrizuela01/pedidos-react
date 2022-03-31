@@ -34,7 +34,7 @@ function App() {
   };
 
   const titulo = pedidos.length === 0 ? "NO HAY PEDIDOS" : "PEDIDOS";
-  const pedidosOrden = pedidos.length;
+  const pedidosOrden = pedidos.length + 1;
 
   return (
     <>
@@ -55,26 +55,26 @@ function App() {
                         {titulo}
                       </h1>
                     </div>
-                    <div>
-                      {pedidosEncontrados &&
-                        pedidosEncontrados.map((e, index) => (
-                          <Pedido
-                            key={index}
-                            pedido={e}
-                            eliminarPedido={eliminarPedido}
-                            background={true}
-                            background2={"bg-dark"}
-                            estado={e.estado}
-                          />
-                        ))}
-                    </div>
-                    {pedidos.map((pedido) => (
-                      <Pedido
-                        key={pedido.id}
-                        pedido={pedido}
-                        eliminarPedido={eliminarPedido}
-                      />
-                    ))}
+                    {pedidosEncontrados.length > 0 ? (
+                      <div>
+                        {pedidosEncontrados &&
+                          pedidosEncontrados.map((e, index) => (
+                            <Pedido
+                              key={index}
+                              pedido={e}
+                              eliminarPedido={eliminarPedido}
+                            />
+                          ))}
+                      </div>
+                    ) : (
+                      pedidos.map((pedido) => (
+                        <Pedido
+                          key={pedido.id}
+                          pedido={pedido}
+                          eliminarPedido={eliminarPedido}
+                        />
+                      ))
+                    )}
                   </div>
                 </div>
                 <div className="row">

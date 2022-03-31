@@ -1,18 +1,20 @@
 import React from "react";
 
-const Pedido = ({ pedido, eliminarPedido, background, background2 }) => {
-  const msj = `DATOS DEL PEDIDO:  %0D%0A PEDIDO: ${pedido.articulo}, TALLE: ${pedido.talle}, LUGAR DE ENTREGA: ${pedido.lugar}, FECHA DE ENTREGA: ${pedido.fecha} a las ${pedido.hora} horas`;
+const Pedido = ({ pedido, eliminarPedido }) => {
+  const msj = `DATOS DEL PEDIDO:  %0D%0A -NUMERO DE ORDEN: ${pedido.orden} %0D%0A -PEDIDO: ${pedido.articulo}, %0D%0A -TALLE: ${pedido.talle}, %0D%0A -LUGAR DE ENTREGA: ${pedido.lugar}, %0D%0A -FECHA DE ENTREGA: ${pedido.fecha} a las ${pedido.hora} horas`;
 
   const url = `https://wa.me/54${pedido.celular}?text=${msj}`;
 
   return (
     <div class="mb-3">
-      <div
-        className={` card ${background2 ? background2 : null}  `}
-        id="pedido"
-      >
+      <div className="card" id="pedido">
         <div className="card-body">
           <div className="list-group list-group-horizontal">
+            <div className="list-group-item">
+              <p>
+                NUMERO DE ORDEN:<span> {pedido.orden} </span>
+              </p>
+            </div>
             <div className="list-group-item">
               <p>
                 CLIENTE:<span> {pedido.cliente} </span>
